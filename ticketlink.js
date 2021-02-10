@@ -17,7 +17,7 @@ let htmlString = `
         <button id="robTicketOpenerOpenTicketButton" style="background-color: darkseagreen;">Open Ticket</button>
     </div>
     </div>
-</div><link rel="stylesheet" type="text/css" href="site.css" />`
+</div><link rel="stylesheet" type="text/css" href="https://xaea12x.github.io/bookmarklets/site.css" />`
 
 function openTicket(){
     let prefix = document.getElementById("robTicketOpenerPrefix").value;
@@ -26,18 +26,17 @@ function openTicket(){
     if(!ticketNumber){alert("please give a ticket number");return;}
     window.location = `https://jira.ihsmarkit.com/browse/${prefix}-${ticketNumber}`;
 }
+
 function killModal(){
     let modal = document.getElementById("robTicketOpenerModal");
     modal.parentElement.removeChild(modal);
 }
 
-document.getElementById("robTicketOpenerButton").onclick = function() {
-    let elem = document.createElement("div");
-    elem.innerHTML = htmlString;
-    document.getElementsByTagName("body")[0].appendChild(elem);
-    document.getElementById("robTicketOpenerOpenTicketButton").onclick = openTicket;
-    document.getElementById("robTicketOpenerCancelButton").onclick = killModal;
-    document.getElementById("robTicketOpenerModal").addEventListener("keydown", function (e) { if (e.keyCode === 13) { openTicket();}});
-    document.getElementsByTagName("body")[0].addEventListener("keydown", function (e) { if (e.keyCode === 27) { killModal();}});
-    document.getElementById("robTicketOpenerNumber").focus();
-}
+let elem = document.createElement("div");
+elem.innerHTML = htmlString;
+document.getElementsByTagName("body")[0].appendChild(elem);
+document.getElementById("robTicketOpenerOpenTicketButton").onclick = openTicket;
+document.getElementById("robTicketOpenerCancelButton").onclick = killModal;
+document.getElementById("robTicketOpenerModal").addEventListener("keydown", function (e) { if (e.keyCode === 13) { openTicket();}});
+document.getElementsByTagName("body")[0].addEventListener("keydown", function (e) { if (e.keyCode === 27) { killModal();}});
+document.getElementById("robTicketOpenerNumber").focus();
