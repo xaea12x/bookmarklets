@@ -1,3 +1,5 @@
+if(document.getElementById("robTicketOpenerModal")) return;
+
 let htmlString = `
 <div id="robTicketOpenerModal" class="robTicketOpenerModal">
     <div class="robTicketOpenerModalContent">
