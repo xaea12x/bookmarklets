@@ -1,6 +1,7 @@
 if(!document.getElementById("robTicketOpenerModal"))
 {
   let htmlString = `
+  <link rel="stylesheet" type="text/css" href="https://xaea12x.github.io/bookmarklets/site.css" />
   <div id="robTicketOpenerModal" class="robTicketOpenerModal">
       <div class="robTicketOpenerModalContent">
       <div>
@@ -19,7 +20,7 @@ if(!document.getElementById("robTicketOpenerModal"))
           <button id="robTicketOpenerOpenTicketButton" style="background-color: darkseagreen;">Open Ticket</button>
       </div>
       </div>
-  </div><link rel="stylesheet" type="text/css" href="https://xaea12x.github.io/bookmarklets/site.css" />`
+  </div>`
 
   function openTicket(){
       let prefix = document.getElementById("robTicketOpenerPrefix").value;
