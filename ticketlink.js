@@ -20,7 +20,7 @@ if(!document.getElementById("robTicketOpenerModal"))
           <button id="robTicketOpenerOpenTicketButton" style="background-color: darkseagreen;">Open Ticket</button>
       </div>
       </div>
-  </div>`
+  </div>`;
 
   function openTicket(){
       let prefix = document.getElementById("robTicketOpenerPrefix").value;
