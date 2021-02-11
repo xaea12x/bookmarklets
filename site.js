@@ -1,10 +1,10 @@
-fetch("ticketlink.js").then(response => response.text()).then(response => createTicketLink(response));
+Promise.all([fetch("ticketlink.js").then(response => response.text()), fetch("site.css").then(response => response.text())])
+  .then(values => createTicketLink(...values));
 
-function createTicketLink(scriptText)
+function createTicketLink(scriptText, cssText)
 {
-  scriptText = scriptText;
-  let bookmarkValue = `javascript:(function(){let _openTicketInNewTab = true;${scriptText}})();`
-  let bookmarkValue2 = `javascript:(function(){let _openTicketInNewTab = false;${scriptText}})();`
+  let bookmarkValue = `javascript:(function(){let _openTicketInNewTab = true;let _styleTag=\`${cssText}\`;${scriptText}})();`
+  let bookmarkValue2 = `javascript:(function(){let _openTicketInNewTab = false;let _styleTag=\`${cssText}\`;${scriptText}})();`
   document.getElementById("bookmarkLink").setAttribute("href", bookmarkValue);
   document.getElementById("bookmarkLink2").setAttribute("href", bookmarkValue2);
 

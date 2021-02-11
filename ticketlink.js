@@ -1,7 +1,7 @@
 if(!document.getElementById("robTicketOpenerModal"))
 {
   let htmlString = `
-  <link rel="stylesheet" type="text/css" href="https://xaea12x.github.io/bookmarklets/site.css" />
+  <style>${_styleTag}</style>
   <div id="robTicketOpenerModal" class="robTicketOpenerModal">
       <div class="robTicketOpenerModalContent">
       <div>
