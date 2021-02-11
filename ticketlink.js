@@ -27,7 +27,9 @@ if(!document.getElementById("robTicketOpenerModal"))
       let ticketNumber = document.getElementById("robTicketOpenerNumber").value;
       if(!prefix){alert("please give a prefix");return;}
       if(!ticketNumber){alert("please give a ticket number");return;}
-      window.open(`https://jira.ihsmarkit.com/browse/${prefix}-${ticketNumber}`, "_blank");
+      if(_openTicketInNewTab) window.open(`https://jira.ihsmarkit.com/browse/${prefix}-${ticketNumber}`, "_blank");
+      else window.location = `https://jira.ihsmarkit.com/browse/${prefix}-${ticketNumber}`;
+
   }
 
   function killModal(){
